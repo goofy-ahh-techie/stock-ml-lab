@@ -1,0 +1,111 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="Page-1" id="YtMV_i6p-zI5mcyGDziv">
+    <mxGraphModel dx="1783" dy="1094" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Raw Data Source&lt;/b&gt;&lt;/span&gt;&lt;br&gt;(most probabily Yahoo Finaance)" vertex="1">
+          <mxGeometry height="110" width="190" x="40" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-2" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Python API for processing&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Making the raw data readable for the developer to make the processing fessible.&amp;nbsp;" vertex="1">
+          <mxGeometry height="190" width="190" x="30" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-5" edge="1" parent="1" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.421;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="300" />
+            </Array>
+            <mxPoint x="158.01" y="160" as="sourcePoint" />
+            <mxPoint x="100.00000000000001" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-12" connectable="0" parent="BUhgUxtRfG1WlJaBWA-u-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="1.&amp;nbsp;" vertex="1">
+          <mxGeometry relative="1" x="0.0635" y="-6" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-6" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Labelling&lt;/b&gt;&lt;/font&gt;&lt;div&gt;We will be labelling data here for the the new entry that we might be saving for future learning and evaluations.&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="200" width="200" x="10" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-7" edge="1" parent="1" source="BUhgUxtRfG1WlJaBWA-u-6" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.18;entryY=0.99;entryDx=0;entryDy=0;entryPerimeter=0;" target="BUhgUxtRfG1WlJaBWA-u-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="20" y="660" />
+              <mxPoint x="60" y="620" />
+            </Array>
+            <mxPoint x="220" y="680" as="sourcePoint" />
+            <mxPoint x="270" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-15" connectable="0" parent="BUhgUxtRfG1WlJaBWA-u-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="3." vertex="1">
+          <mxGeometry relative="1" x="0.0321" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-8" edge="1" parent="1" source="BUhgUxtRfG1WlJaBWA-u-2" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.593;exitY=1.005;exitDx=0;exitDy=0;exitPerimeter=0;" target="BUhgUxtRfG1WlJaBWA-u-6" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="660" />
+            </Array>
+            <mxPoint x="220" y="680" as="sourcePoint" />
+            <mxPoint x="270" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-14" connectable="0" parent="BUhgUxtRfG1WlJaBWA-u-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="2." vertex="1">
+          <mxGeometry relative="1" x="-0.0185" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-9" parent="1" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Training&lt;/b&gt;&lt;/span&gt;&lt;br&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;will be training our data from the pipelines.&amp;nbsp;&lt;br&gt;1. From the new data.&amp;nbsp;&lt;br&gt;2. will check the existing one.&lt;/font&gt;&lt;div&gt;&lt;font size=&quot;3&quot;&gt;3. optimize&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;REPEAT&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="240" width="390" x="390" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-10" edge="1" parent="1" source="BUhgUxtRfG1WlJaBWA-u-2" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=20;entryDy=240.00000000000003;entryPerimeter=0;" target="BUhgUxtRfG1WlJaBWA-u-9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="460" />
+            </Array>
+            <mxPoint x="390" y="560" as="sourcePoint" />
+            <mxPoint x="440" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-13" connectable="0" parent="BUhgUxtRfG1WlJaBWA-u-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="4." vertex="1">
+          <mxGeometry relative="1" x="-0.2469" y="44" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-11" edge="1" parent="1" source="BUhgUxtRfG1WlJaBWA-u-9" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.984;entryY=0.93;entryDx=0;entryDy=0;entryPerimeter=0;" target="BUhgUxtRfG1WlJaBWA-u-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="460" />
+              <mxPoint x="350" y="547" />
+            </Array>
+            <mxPoint x="320" y="560" as="sourcePoint" />
+            <mxPoint x="370" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-16" connectable="0" parent="BUhgUxtRfG1WlJaBWA-u-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="5." vertex="1">
+          <mxGeometry relative="1" x="0.3646" y="-7" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-17" parent="1" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Evaluation and Reports&lt;/b&gt;&lt;/font&gt;&lt;div&gt;This is the main, and last ares for our data after training. And here we are going to do evaluation and create reports for iur case study.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="320" width="300" x="510" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-19" edge="1" parent="1" source="BUhgUxtRfG1WlJaBWA-u-2" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=-0.01;entryY=0.37;entryDx=0;entryDy=0;entryPerimeter=0;" target="BUhgUxtRfG1WlJaBWA-u-17" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="770" />
+            </Array>
+            <mxPoint x="370" y="560" as="sourcePoint" />
+            <mxPoint x="420" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BUhgUxtRfG1WlJaBWA-u-20" connectable="0" parent="BUhgUxtRfG1WlJaBWA-u-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="6." vertex="1">
+          <mxGeometry relative="1" x="-0.1619" y="28" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
