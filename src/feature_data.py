@@ -30,3 +30,4 @@ def featuring_the_data(df: pd.DataFrame):
 
     print("Feature engineering complete.")
     print("Final shape: ", df_final.shape)
+    return df_final
