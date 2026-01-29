@@ -1,5 +1,7 @@
 import yfinance as yf
 import pandas as pd
+import binary_labels
+import feature_data
 
 
 def clean_daily_data(stock_name: str): 
@@ -55,7 +57,7 @@ def change_price_to_nums(df: pd.DataFrame):
 def change_date_type(df: pd.DataFrame):
     """Will be updating the date time format to UTC."""
     df["Date"] = pd.to_datetime(df["Date"], utc=True)
-    df = df.sort_values("Date")
+    df = df.sort_values("Date", ascending=True)
     df["Date"] = df["Date"].dt.strftime("%Y-%m-%d") # type: ignore
 
 def drop_missing_ohlcv(df: pd.DataFrame):
@@ -76,3 +78,7 @@ def drop_missing_ohlcv(df: pd.DataFrame):
     return df.reset_index(drop=True)
     
 clean_daily_data("RELIANCE.NS")
+path = "data/processed/RELIANCE.NS.csv"
+df = pd.read_csv(path)
+labeled_df = binary_labels.create_binary_nextday_label(df)
+featured_df = feature_data.featuring_the_data(labeled_df)
