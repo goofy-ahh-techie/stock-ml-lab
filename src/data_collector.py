@@ -6,11 +6,9 @@ def clean_daily_data(stock_name: str):
     """ 
     Basically initially call the yfinance API for getting the data, and save that data in a csv file
     """
-    symbol = "RELIANCE.NS"
-
-    dataF = yf.download(symbol, start="2015-01-01", end="2024-12-31", auto_adjust=True, progress=False)
+    dataF = yf.download(stock_name, start="2015-01-01", end="2024-12-31", auto_adjust=True, progress=False)
     if dataF is None or dataF.empty:
-        raise ValueError(f"No data returned for symbol={symbol}. Check ticker, date range, or network.")
+        raise ValueError(f"No data returned for symbol={stock_name}. Check ticker, date range, or network.")
     
     dataF.to_csv("data/raw/" + stock_name + ".csv", index=True)
 
@@ -33,6 +31,13 @@ def clean_daily_data(stock_name: str):
         "Volume"
     ]
 
+    change_price_to_nums(df)
+    change_date_type(df)
+    drop_missing_ohlcv(df)
+
+    df.to_csv("data/processed/" + stock_name + ".csv", index=False)
+
+def change_price_to_nums(df: pd.DataFrame):
     """
     This will round off the price values to 4 after decimal.
     """
@@ -45,17 +50,13 @@ def clean_daily_data(stock_name: str):
     df[price_col] = (df[price_col].apply(
         pd.to_numeric, errors="coerce"
     ).round(4))
-    print(df["Close"].dtype)
+    return df
 
+def change_date_type(df: pd.DataFrame):
     """Will be updating the date time format to UTC."""
     df["Date"] = pd.to_datetime(df["Date"], utc=True)
     df = df.sort_values("Date")
     df["Date"] = df["Date"].dt.strftime("%Y-%m-%d") # type: ignore
-
-    drop_missing_ohlcv(df=df)
-
-    df.to_parquet("data/processed/" + stock_name + ".parquet", index=False)
-
 
 def drop_missing_ohlcv(df: pd.DataFrame):
     ohlcv_cols = ["Close",
