@@ -1,7 +1,8 @@
 import yfinance as yf
 import pandas as pd
-import binary_labels
-import feature_data
+from binary_labels import create_binary_nextday_label
+from feature_data import featuring_the_data
+from training_data import train_data
 
 
 def clean_daily_data(stock_name: str): 
@@ -80,5 +81,6 @@ def drop_missing_ohlcv(df: pd.DataFrame):
 clean_daily_data("RELIANCE.NS")
 path = "data/processed/RELIANCE.NS.csv"
 df = pd.read_csv(path)
-labeled_df = binary_labels.create_binary_nextday_label(df)
-featured_df = feature_data.featuring_the_data(labeled_df)
+labeled_df = create_binary_nextday_label(df)
+featured_df = featuring_the_data(labeled_df)
+train_data(featured_df)
