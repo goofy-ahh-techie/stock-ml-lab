@@ -61,7 +61,7 @@ def train_data(df: pd.DataFrame):
     return {
         "X_train": X_train_scaled, "Y_train": Y_train,
         "X_val": X_val_scaled, "Y_val": Y_val,
-        "X_tesy": X_test_scaled, "Y_test": Y_test,
+        "X_test": X_test_scaled, "Y_test": Y_test,
         "scaler": scaler, 
         "feature_cols": feature_cols
     }

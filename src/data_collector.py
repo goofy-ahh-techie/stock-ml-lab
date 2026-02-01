@@ -3,6 +3,8 @@ import pandas as pd
 from binary_labels import create_binary_nextday_label
 from feature_data import featuring_the_data
 from training_data import train_data
+from basline_model import train_log_reg
+from evaluate_baseline import run_evaluation
 
 
 def clean_daily_data(stock_name: str): 
@@ -83,4 +85,6 @@ path = "data/processed/RELIANCE.NS.csv"
 df = pd.read_csv(path)
 labeled_df = create_binary_nextday_label(df)
 featured_df = featuring_the_data(labeled_df)
-train_data(featured_df)
+bundle = train_data(featured_df)
+updated_bundle = train_log_reg(bundle)[1]
+run_evaluation(updated_bundle)
