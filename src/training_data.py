@@ -31,29 +31,37 @@ def train_data(df: pd.DataFrame):
     print("Val:", df_val["Date"].min(), "->", df_val["Date"].max(), "rows:", len(df_val))
     print("Test:", df_test["Date"].min(), "->", df_test["Date"].max(), "rows:", len(df_test))
 
-    feature_col = [c for c in df.columns if c not in ["Date", "y"]]
+    feature_cols = [c for c in df.columns if c not in ["Date", "y"]]
 
-    X_train = df_train[feature_col].copy()
+    X_train = df_train[feature_cols].copy()
     Y_train = df_train["y"].copy()
 
-    X_val = df_val[feature_col].copy()
+    X_val = df_val[feature_cols].copy()
     Y_val = df_val["y"].copy()
 
-    X_test = df_test[feature_col].copy()
+    X_test = df_test[feature_cols].copy()
     Y_test = df_test["y"].copy()
 
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
-    X_val_scaled = scaler.fit_transform(X_val)
-    X_test_scaled = scaler.fit_transform(X_test)
+    X_val_scaled = scaler.transform(X_val)
+    X_test_scaled = scaler.transform(X_test)
 
     print("Scaler fit only on train. Transformed val/test.")
 
-    X_train_scaled = pd.DataFrame(X_train_scaled, columns=feature_col, index=X_train.index)
-    X_val_scaled = pd.DataFrame(X_val_scaled, columns=feature_col, index=X_val.index)
-    X_test_scaled = pd.DataFrame(X_test_scaled, columns=feature_col, index=X_test.index)
+    X_train_scaled = pd.DataFrame(X_train_scaled, columns=feature_cols, index=X_train.index)
+    X_val_scaled = pd.DataFrame(X_val_scaled, columns=feature_cols, index=X_val.index)
+    X_test_scaled = pd.DataFrame(X_test_scaled, columns=feature_cols, index=X_test.index)
 
     print("\nClass balance:")
     print("Train y mean: ", Y_train.mean())
     print("Val y mean: ", Y_val.mean())
     print("Test y mean: ", Y_test.mean())
+
+    return {
+        "X_train": X_train_scaled, "Y_train": Y_train,
+        "X_val": X_val_scaled, "Y_val": Y_val,
+        "X_tesy": X_test_scaled, "Y_test": Y_test,
+        "scaler": scaler, 
+        "feature_cols": feature_cols
+    }
